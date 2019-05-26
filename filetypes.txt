@@ -1,0 +1,4 @@
+.rb
+.erb
+.js
+.jsx
