@@ -10,16 +10,24 @@ directories = read('./directories.txt')
 filetypes = read('./filetypes.txt')
 characters = read('./characters.txt')
 
+def valid_path(path):
+    for directory in directories:
+        if path.replace(root_dir + '/', '').startswith(directory):
+            return True
+    return False
+
+def valid_files(files):
+    return (f for f in files if os.path.splitext(f)[1] in filetypes)
+
 def run():
     results = {key: 0 for key in characters}
     for dirpath, dirnames, files in os.walk(root_dir):
-        for directory in directories:
-            if dirpath.replace(root_dir + '/', '').startswith(directory):
-                for file in files:
-                    if os.path.splitext(file)[1] in filetypes:
-                        for line in open(f'{dirpath}/{file}').readlines():
-                            for char in characters:
-                                results[char] = results[char] + line.count(char)
+        if not valid_path(dirpath):
+            continue
+        for file in valid_files(files):
+            for line in read(f'{dirpath}/{file}'):
+                for char in characters:
+                    results[char] += line.count(char)
     return results
 
 data = run()
