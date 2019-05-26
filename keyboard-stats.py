@@ -1,5 +1,6 @@
 import os
 import sys
+from tabulate import tabulate
 
 def read(f):
     return open(f).read().splitlines()
@@ -22,4 +23,4 @@ def run():
     return results
 
 data = run()
-print(data)
+print(tabulate(data.items(), headers=['Symbol', 'Count'], tablefmt='orgtbl'))
