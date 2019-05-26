@@ -1,0 +1,51 @@
+* Keyboard Stats
+
+Find symbols typed to create more efficient layouts with programmable keyboards.
+
+#+BEGIN_SRC shell
+python keyboard_stats.py [relative_dir_path]
+#+END_SRC
+
+Example output:
+
+#+BEGIN_SRC text
+| Symbol   |   Count |
+|----------+---------|
+| (        |   16550 |
+| )        |   16550 |
+| [        |    2555 |
+| ]        |    2555 |
+| {        |    8095 |
+| }        |    8095 |
+| <        |   13285 |
+| <<       |      59 |
+| >        |   14828 |
+| ;        |    6743 |
+| :        |   18397 |
+| ,        |   13298 |
+| .        |   22500 |
+| =        |   14735 |
+| ==       |     451 |
+| ===      |     196 |
+| =>       |    1668 |
+| &        |    1011 |
+| &&       |     387 |
+| |        |    1674 |
+| ||       |     306 |
+| -        |    9869 |
+| --       |     208 |
+| +        |     448 |
+| ++       |      13 |
+| /        |    9235 |
+| \        |     181 |
+| *        |     213 |
+| !        |     636 |
+| ?        |    1827 |
+| ~        |       8 |
+| `        |     802 |
+| @        |    1676 |
+| #        |    4182 |
+| $        |    1636 |
+| ${       |     279 |
+| %        |    6857 |
+#+END_SRC
